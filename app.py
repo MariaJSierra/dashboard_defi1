@@ -61,10 +61,20 @@ st.markdown("""
 """, unsafe_allow_html=True)
 #
 # Cargar datos
-with open('simulations2.json', 'r') as f:
-    all_simulations = json.load(f)
+with open('simulations1.json', 'r') as f:
+    all_simulations1 = json.load(f)
 
-all_simulations = convertir_a_ndarray(all_simulations)
+# Cargar datos
+with open('simulations2.json', 'r') as f:
+    all_simulations2 = json.load(f)
+
+
+
+all_simulations1 = convertir_a_ndarray(all_simulations1)
+all_simulations2 = convertir_a_ndarray(all_simulations2)
+all_simulations1.update(all_simulations2)
+all_simulations = all_simulations1.copy()
+
 all_simulations = {k: v for k, v in all_simulations.items() if k in activos_finales}
 returns = pd.read_excel('retornos.xlsx', index_col=0, parse_dates=True)
 
