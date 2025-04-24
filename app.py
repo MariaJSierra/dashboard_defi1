@@ -7,17 +7,19 @@ import pandas_datareader.data as web
 import statsmodels.api as sm
 from funciones import *
 
-activos_finales = {'IXC': 1.030091e-01, 
-                   'XRT': 4.725578e-02, 
-                   'CAR': 2.218685e-01, 
-                   'AMZN': 1.665052e-01, 
-                   'BHVN': 2.224662e-01, 
-                   'HTZ': 1.807907e-01, 
-                   'CVX': 3.891293e-02, 
-                   'AMX': 1.919165e-02, 
-                   'GC=F': 0.000000e+00, 
-                   'HG=F': 2.775558e-17
+activos_finales = {
+    'IXC': 0.0444,
+    'XLE': 0.0563,
+    'CAR': 0.2334,
+    'AMZN': 0.1735,
+    'BHVN': 0.2340,
+    'HTZ': 0.1890,
+    'CVX': 0.0354,
+    'AMX': 0.0141,
+    'SI=F': 0.0100,
+    'HG=F': 0.0100
 }
+
 
 # Configuración de página y estilos personalizados
 st.set_page_config(layout="wide")
@@ -84,7 +86,7 @@ returns = returns[activos_finales_lst]
 tbill_data = web.DataReader('TB3MS', 'fred', "2023-04-15", "2025-04-15")
 
 # --- TÍTULO CENTRADO ---
-st.markdown('<div class="titulo">Portafolio de Inversión para El Inversionauta</div>', unsafe_allow_html=True)
+st.markdown('<div class="titulo">Portafolio de Inversión para El Inversionauta (Rentabilidad de 11.8029% a 6 meses)</div>', unsafe_allow_html=True)
 
 # --- DISTRIBUCIÓN 50-50 ENTRE GRÁFICAS Y CONTENEDOR DERECHO ---
 col_izq, col_der = st.columns(2)
@@ -127,8 +129,8 @@ with col_der:
               <tr>
                 <td>Call sobre IXC</td>
                 <td>3.45 USD</td>
-                <td rowspan="2" style="text-align:center;">-4.25%</td>
-                <td rowspan="2" style="text-align:center;">-6.80%</td>
+                <td rowspan="2" style="text-align:center;">-0.0864%</td>
+                <td rowspan="2" style="text-align:center;">-0.1221%</td>
               </tr>
               <tr>
                 <td>Put sobre AMZN</td>
