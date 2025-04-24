@@ -3,19 +3,21 @@ import numpy as np
 with open('simulations.json', 'r') as f:
     all_simulations = json.load(f)
 
-activos_finales = {'IXC': 1.030091e-01, 
-                   'XRT': 4.725578e-02, 
-                   'CAR': 2.218685e-01, 
-                   'AMZN': 1.665052e-01, 
-                   'BHVN': 2.224662e-01, 
-                   'HTZ': 1.807907e-01, 
-                   'CVX': 3.891293e-02, 
-                   'AMX': 1.919165e-02, 
-                   'GC=F': 0.000000e+00, 
-                   'HG=F': 2.775558e-17
+activos_finales = {
+    'IXC': 0.0444,
+    'XLE': 0.0563,
+    'CAR': 0.2334,
+    'AMZN': 0.1735,
+    'BHVN': 0.2340,
+    'HTZ': 0.1890,
+    'CVX': 0.0354,
+    'AMX': 0.0141,
+    'SI=F': 0.0100,
+    'HG=F': 0.0100
 }
-af = ['IXC', 'XRT', 'CAR', 'AMZN', 'BHVN']
-af2 = ['HTZ', 'CVX', 'AMX', 'GC=F', 'HG=F']
+
+af = ['IXC', 'XLE', 'CAR', 'AMZN', 'BHVN']
+af2 = ['HTZ', 'CVX', 'AMX', 'SI=F', 'HG=F']
 
 def convertir_a_ndarray(obj):
     if isinstance(obj, list):
