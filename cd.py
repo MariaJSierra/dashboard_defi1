@@ -30,8 +30,7 @@ def convertir_a_ndarray(obj):
     return obj
 
 all_simulations = convertir_a_ndarray(all_simulations)
-for a, b in all_simulations.items():
-    print(type(b))
+
 all_simulations1 = {k: v for k, v in all_simulations.items() if k in af}
 all_simulations2 = {k: v for k, v in all_simulations.items() if k in af2}
 
