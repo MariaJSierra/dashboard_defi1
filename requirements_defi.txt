@@ -1,6 +1,0 @@
-pandas
-seaborn
-plotly
-streamlit
-json
-statsmodels
