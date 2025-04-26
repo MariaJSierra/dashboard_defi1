@@ -86,7 +86,7 @@ returns = returns[activos_finales_lst]
 tbill_data = web.DataReader('TB3MS', 'fred', "2023-04-15", "2025-04-15")
 
 # --- TÍTULO CENTRADO ---
-st.markdown('<div class="titulo">Portafolio de Inversión para El Inversionauta (Rentabilidad de 11.8029% a 6 meses)</div>', unsafe_allow_html=True)
+st.markdown('<div class="titulo">Portafolio de Inversión para El Inversionauta (Rentabilidad de 11.80% a 6 meses)</div>', unsafe_allow_html=True)
 
 # --- DISTRIBUCIÓN 50-50 ENTRE GRÁFICAS Y CONTENEDOR DERECHO ---
 col_izq, col_der = st.columns(2)
@@ -122,19 +122,22 @@ with col_der:
             <table style="width:100%; text-align:left; font-size:16px;">
               <tr>
                 <th>Opción</th>
-                <th>Prima</th>
-                <th style="border-bottom: 1px solid #ccc;">VaR 95%</th>
-                <th style="border-bottom: 1px solid #ccc;">VaR 99%</th>
+                <th>Prima del Activo</th>
+                <th>Prima Simulada</th>
+                <th style="border-bottom: 1px solid #ccc;">VaR 95% (6M)</th>
+                <th style="border-bottom: 1px solid #ccc;">VaR 99% (6M)</th>
               </tr>
               <tr>
-                <td>Call sobre IXC</td>
-                <td>3.45 USD</td>
-                <td rowspan="2" style="text-align:center;">-0.0864%</td>
-                <td rowspan="2" style="text-align:center;">-0.1221%</td>
+                <td>Call sobre Amazon (Strike: $195)</td>
+                <td>$17.10</td>
+                <td>$16.2256</td>
+                <td rowspan="2" style="text-align:center;">-41.38%</td>
+                <td rowspan="2" style="text-align:center;">-58.43%</td>
               </tr>
               <tr>
-                <td>Put sobre AMZN</td>
-                <td>5.10 USD</td>
+                <td>Call sobre CAR (Strike $85)</td>
+                <td>$19.76</td>
+                <td>$21.9163</td>
               </tr>
             </table>
         </div>
